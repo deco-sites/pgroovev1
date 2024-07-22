@@ -35,8 +35,20 @@ export default function HeroFlats({
   image,
   placement = "left",
   cta = [
-    { id: "change-me-1", href: "/", text: "Change me", outline: false },
-    { id: "change-me-2", href: "/", text: "Change me", outline: true },
+    {
+      id: "change-me-1",
+      href: "/",
+      text: "Change me",
+      outline: false,
+      size: "md",
+    },
+    {
+      id: "change-me-2",
+      href: "/",
+      text: "Change me",
+      outline: true,
+      size: "lg",
+    },
   ],
 }: Props) {
   return (
@@ -45,9 +57,9 @@ export default function HeroFlats({
         <div
           class={`flex w-full xl:container xl:mx-auto py-20 mx-5 md:mx-10 z-10 ${
             image
-              ? PLACEMENT[placement]
-              : "flex-col items-center justify-center text-center"
-          } lg:py-36 gap-12 md:gap-20 items-center`}
+              ? "flex-col items-center justify-center text-center"
+              : "lg:w-1/2 lg:max-w-xl"
+          }`}
         >
           {image && (
             <Image
@@ -60,36 +72,21 @@ export default function HeroFlats({
               loading="lazy"
             />
           )}
-          <div
-            class={`mx-6 lg:mx-auto lg:w-full space-y-4 gap-4 ${
-              image
-                ? "lg:w-1/2 lg:max-w-xl"
-                : "flex flex-col items-center justify-center lg:max-w-3xl"
-            }`}
-          >
+          <div class={`mx-6 lg:mx-auto lg:w-full space-y-4 gap-4`}>
             <div
               class="inline-block lg:text-[80px] text-4xl leading-none font-medium"
-              dangerouslySetInnerHTML={{
-                __html: title,
-              }}
-            >
-            </div>
-            <p class="text-lg md:text-md leading-[150%]">
-              {description}
-            </p>
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
+            <p class="text-lg md:text-md leading-[150%]">{description}</p>
             <div class="flex items-center gap-3">
               {cta?.map((item) => (
-                <a
+                <Button
                   key={item?.id}
-                  id={item?.id}
-                  href={item?.href}
-                  target={item?.href.includes("http") ? "_blank" : "_self"}
-                  class={`font-normal btn btn-primary ${
-                    item.outline && "btn-outline"
-                  }`}
-                >
-                  {item?.text}
-                </a>
+                  text={item?.text}
+                  onClick={() => console.log(`${item?.text} clicked`)}
+                  variant={item.outline ? "outline" : "primary"}
+                  size={item.size}
+                />
               ))}
             </div>
           </div>

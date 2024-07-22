@@ -40,6 +40,10 @@ export interface Props {
   social?: Social[];
 }
 
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+import Button from "./Button"; // Import the new Button component
+
 export default function Footer({
   logo = {
     src:
@@ -72,18 +76,17 @@ export default function Footer({
       items: [
         { label: "Link Eleven", href: "/" },
         { label: "Link Twelve", href: "/" },
-        { label: "Link FourThirteenteen", href: "/" },
         { label: "Link Fourteen", href: "/" },
         { label: "Link Fifteen", href: "/" },
       ],
     },
   ],
   subscribe = {
-    title: "Subcribe",
+    title: "Subscribe",
     description:
       "Join our newsletter to stay up to date on features and releases.",
     instructions:
-      "By subscribing you agree to with our <a href='/' target='_blank' class='link'>Privacy Policy</a> and provide consent to receive updates from our company.",
+      "By subscribing you agree to our <a href='/' target='_blank' class='link'>Privacy Policy</a> and provide consent to receive updates from our company.",
   },
   madeWith = {
     label: "Made with",

@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import Button from "./Button"; // Import the new Button component
 
 export interface Post {
   title: string;
@@ -99,6 +100,12 @@ export default function BlogPosts({
                   <span>•</span>
                   <span>{post.author}</span>
                 </div>
+                <Button
+                  text="Read More"
+                  onClick={() => console.log(`Read more about ${post.title}`)}
+                  variant="primary"
+                  size="md"
+                />
               </div>
             </div>
           ))}
