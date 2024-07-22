@@ -1,42 +1,94 @@
 {
-    "name": "Home",
-    "path": "/",
-    "sections": [
-      {
-        "__resolveType": "Header"
-      },
-      {
-        "__resolveType": "site/sections/Hero.tsx",
-        "title": "<p>Click here to tweak this text however you want.</p>",
-        "cta": [],
-        "description": "This text is fully editable and ready for your personal touch. Just click here, head over to the section window, or dive straight into the code to make changes as you see fit. Whether it's about the content, formatting, font, or anything in between, editing is just a click away."
-      },
-      {
-        "__resolveType": "site/sections/Logos.tsx"
-      },
-      {
-        "__resolveType": "site/sections/ImageWithParagraph.tsx"
-      },
-      {
-        "__resolveType": "site/sections/ImageWithParagraph.tsx",
-        "placement": "right"
-      },
-      {
-        "__resolveType": "site/sections/BlogPosts.tsx"
-      },
-      {
-        "__resolveType": "site/sections/Testimonials.tsx",
-        "arrows": true
-      },
-      {
-        "__resolveType": "site/sections/Faq.tsx"
-      },
-      {
-        "__resolveType": "Footer"
+  "name": "Home",
+  "path": "/",
+  "sections": [
+    {
+      "__resolveType": "site/sections/Header.tsx",
+      "navigation": {
+        "links": [
+          {
+            "label": "Home",
+            "url": "/"
+          },
+          {
+            "label": "About ",
+            "url": "/about"
+          },
+          {
+            "label": "Events",
+            "url": "/events"
+          },
+          {
+            "label": "Artist",
+            "url": "/events"
+          },
+          {
+            "label": "Community",
+            "url": "/community"
+          },
+          {
+            "label": "Contact",
+            "url": "/contact"
+          }
+        ],
+        "buttons": [
+          {
+            "href": "Join Now",
+            "text": "/signup"
+          },
+          {
+            "href": "/showcase",
+            "text": "Show Case Your Talent"
+          },
+          {
+            "text": "Collaborate Now",
+            "href": "/collaborate"
+          }
+        ]
       }
-    ],
-    "__resolveType": "website/pages/Page.tsx",
-    "seo": {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Hero.tsx",
+      "title": "<h1>Primordial Groove</h1>\n<p></p>\n<p><span style=\"font-size: 37pt\">Where Art Meets Community</span></p>\n<p></p>\n",
+      "cta": [
+        {
+          "text": "Collaborate Now",
+          "href": "/collaborate"
+        },
+        {
+          "text": "Showcase Your Talent",
+          "href": "/showcase"
+        }
+      ],
+      "description": "Are you an artist, band, or DJ looking for a dynamic space to showcase your talent? At Primordial Groove, we provide the perfect environment to connect, collaborate, and grow. Be a part of the collective that brings your vision, community, and opportunity to life. Fill out the form and start your journey with us today.",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11937/e8005a81-dc7f-4c95-858c-bc06d5c8514e"
+    },
+    {
+      "__resolveType": "site/sections/Logos.tsx"
+    },
+    {
+      "__resolveType": "site/sections/ImageWithParagraph.tsx"
+    },
+    {
+      "__resolveType": "site/sections/ImageWithParagraph.tsx",
+      "placement": "right"
+    },
+    {
+      "__resolveType": "site/sections/BlogPosts.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Testimonials.tsx",
+      "arrows": true
+    },
+    {
+      "__resolveType": "site/sections/Faq.tsx"
+    },
+    {
+      "__resolveType": "Footer"
     }
+  ],
+  "__resolveType": "website/pages/Page.tsx",
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
   }
+}
