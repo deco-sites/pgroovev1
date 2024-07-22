@@ -1,5 +1,4 @@
-
-import { ImageWidget } from 'apps/admin/widgets.ts';
+import { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface CTA {
   id?: string;
@@ -59,13 +58,18 @@ export default function BlogPosts({
       <div class="container mx-auto py-12">
         <h2 class="text-3xl font-bold mb-4">{title}</h2>
         <p class="mb-8">{description}</p>
-        <a href={cta.href} class={`btn btn-primary ${cta.outline ? "btn-outline" : ""}`}>
+        <a
+          href={cta.href}
+          class={`btn btn-primary ${cta.outline ? "btn-outline" : ""}`}
+        >
           {cta.text}
         </a>
         <div class="mt-12">
           {questions.map((question, index) => (
             <details key={index} class="mb-4 bg-base-200 rounded-box">
-              <summary class="font-bold cursor-pointer">{question.title}</summary>
+              <summary class="font-bold cursor-pointer">
+                {question.title}
+              </summary>
               <div class="p-4">{question.answer}</div>
             </details>
           ))}
