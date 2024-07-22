@@ -30,23 +30,63 @@ export interface Nav {
   navButtons?: CTA[];
 }
 
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+import Icon from "../components/ui/Icon.tsx";
+
+export interface CTA {
+  href: string;
+  text: string;
+  outline?: boolean;
+  /**
+   * @format color-input
+   * @description The color of the button text.
+   */
+  textColor?: string;
+  /**
+   * @format color-input
+   * @description The background color of the button.
+   */
+  bgColor?: string;
+}
+
+export interface Nav {
+  logo?: {
+    src?: ImageWidget;
+    alt?: string;
+  };
+  navLinks?: {
+    label?: string;
+    url?: string;
+  }[];
+  navButtons?: CTA[];
+}
+
+export interface Props {
+  navigation: Nav;
+}
+
 export default function Header({
-  logo = {
-    src:
-      "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
-    alt: "Logo",
-  },
-  navLinks = [
-    { label: "Home", url: "/" },
-    { label: "About us", url: "/" },
-    { label: "Princing", url: "/" },
-    { label: "Contact", url: "/" },
-  ],
-  navButtons = [
-    { href: "/", text: "Change me", outline: false },
-    { href: "/", text: "Change me", outline: true },
-  ],
-}: Nav) {
+  navigation,
+}: Props) {
+  const {
+    logo = {
+      src:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
+      alt: "Logo",
+    },
+    navLinks = [
+      { label: "Home", url: "/" },
+      { label: "About us", url: "/" },
+      { label: "Pricing", url: "/" },
+      { label: "Contact", url: "/" },
+    ],
+    navButtons = [
+      { href: "/", text: "Change me", outline: false },
+      { href: "/", text: "Change me", outline: true },
+    ],
+  } = navigation;
+
   return (
     <nav class="drawer drawer-end">
       <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
@@ -59,8 +99,8 @@ export default function Header({
 
         <div class="hidden items-center justify-between lg:flex w-full">
           <ul class="flex">
-            {navigation.links.map((link) => (
-              <li>
+            {navLinks.map((link) => (
+              <li key={link.url}>
                 <a
                   href={link.url}
                   aria-label={link.label}
@@ -72,17 +112,16 @@ export default function Header({
             ))}
           </ul>
           <ul class="flex gap-3">
-            {navigation.buttons?.map((item) => (
+            {navButtons.map((item) => (
               <a
-                key={item?.id}
-                id={item?.id}
-                href={item?.href ?? "#"}
-                target={item?.href.includes("http") ? "_blank" : "_self"}
+                key={item.href}
+                href={item.href}
+                target={item.href.includes("http") ? "_blank" : "_self"}
                 class={`font-normal btn btn-primary ${
                   item.outline && "btn-outline"
                 }`}
               >
-                {item?.text}
+                {item.text}
               </a>
             ))}
           </ul>
@@ -116,8 +155,8 @@ export default function Header({
           </a>
 
           <ul class="menu">
-            {navigation?.links.map((link) => (
-              <li>
+            {navLinks.map((link) => (
+              <li key={link.url}>
                 <a href={link.url} aria-label={link.label}>
                   {link.label}
                 </a>
@@ -126,17 +165,16 @@ export default function Header({
           </ul>
 
           <ul class="p-4 flex items-center gap-3">
-            {navigation.buttons?.map((item) => (
+            {navButtons.map((item) => (
               <a
-                key={item?.id}
-                id={item?.id}
-                href={item?.href ?? "#"}
-                target={item?.href.includes("http") ? "_blank" : "_self"}
+                key={item.href}
+                href={item.href}
+                target={item.href.includes("http") ? "_blank" : "_self"}
                 class={`font-normal btn btn-primary ${
                   item.outline && "btn-outline"
                 }`}
               >
-                {item?.text}
+                {item.text}
               </a>
             ))}
           </ul>
