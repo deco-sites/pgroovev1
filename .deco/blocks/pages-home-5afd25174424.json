@@ -64,7 +64,10 @@
       "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/11937/e8005a81-dc7f-4c95-858c-bc06d5c8514e"
     },
     {
-      "__resolveType": "site/sections/Logos.tsx"
+      "__resolveType": "site/sections/Logos.tsx",
+      "logos": [
+        {}
+      ]
     },
     {
       "__resolveType": "site/sections/ImageWithParagraph.tsx"
