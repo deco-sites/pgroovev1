@@ -104,5 +104,17 @@
   "/.deco/blocks/Vanilla.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
+  },
+  "/.deco/blocks/deco-ai-assistants.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/ai-assistants.ts"
+  },
+  "/.deco/blocks/deco-records.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/records.ts"
+  },
+  "/.deco/blocks/deco-workflows.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/workflows.ts"
   }
 }
