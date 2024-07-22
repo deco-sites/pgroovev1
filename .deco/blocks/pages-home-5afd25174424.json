@@ -100,7 +100,11 @@
       "__resolveType": "website/sections/Rendering/SingleDeferred.tsx",
       "section": {
         "__resolveType": "site/sections/Footer.tsx",
-        "subscribe": {}
+        "subscribe": {
+          "title": "emal",
+          "description": "put it here",
+          "instructions": "<p>hello </p>"
+        }
       }
     }
   ],

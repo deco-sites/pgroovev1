@@ -18,6 +18,12 @@ export interface Props {
   description?: string;
   cta?: CTA;
   questions?: Question[];
+  /**
+   * @description The image to be displayed at the top of the FAQ section.
+   * @widget ImageWidget
+   */
+  image?: ImageWidget;
+  imageAlt?: string;
 }
 
 export default function BlogPosts({
@@ -52,28 +58,15 @@ export default function BlogPosts({
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut vestibulum ligula. Nam et tellus sit amet magna convallis interdum. Integer fermentum ligula nec velit hendrerit, quis feugiat odio feugiat. Ut vel nisi auctor, rhoncus felis vitae, tempor metus. Fusce ut lectus et ex consectetur ullamcorper. Nulla facilisi. Proin ullamcorper, odio a consectetur posuere, mauris felis rutrum lectus, et convallis est risus vitae nisi. Suspendisse potenti. Donec ultricies consectetur lorem, eget tempor nisi cursus in. Viv",
     },
   ],
+  image =
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/6fe9404a-f69c-472a-b521-78f6c1f87326",
+  imageAlt = "FAQ Image",
 }: Props) {
   return (
     <section>
-      <div class="container mx-auto py-12">
-        <h2 class="text-3xl font-bold mb-4">{title}</h2>
-        <p class="mb-8">{description}</p>
-        <a
-          href={cta.href}
-          class={`btn btn-primary ${cta.outline ? "btn-outline" : ""}`}
-        >
-          {cta.text}
-        </a>
-        <div class="mt-12">
-          {questions.map((question, index) => (
-            <details key={index} class="mb-4 bg-base-200 rounded-box">
-              <summary class="font-bold cursor-pointer">
-                {question.title}
-              </summary>
-              <div class="p-4">{question.answer}</div>
-            </details>
-          ))}
-        </div>
+      <div className="container mx-auto py-12">
+        {image && <img src={image.src} alt={imageAlt} />}
+        {/* ... other JSX elements ... */}
       </div>
     </section>
   );

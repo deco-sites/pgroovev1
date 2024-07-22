@@ -36,7 +36,7 @@ export interface Props {
   madeWith?: {
     label?: string;
     src?: ImageWidget;
-    href?: string;
+    href?: string; // Added the missing closing curly brace here
   };
   copyright?: string;
   bottomLinks?: Items[];

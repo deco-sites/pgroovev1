@@ -3,10 +3,19 @@ import Image from "apps/website/components/Image.tsx";
 import Icon from "../components/ui/Icon.tsx";
 
 export interface CTA {
-  id?: string;
   href: string;
   text: string;
   outline?: boolean;
+  /**
+   * @format color-input
+   * @description The color of the button text.
+   */
+  textColor?: string;
+  /**
+   * @format color-input
+   * @description The background color of the button.
+   */
+  bgColor?: string;
 }
 
 export interface Nav {
@@ -14,13 +23,11 @@ export interface Nav {
     src?: ImageWidget;
     alt?: string;
   };
-  navigation?: {
-    links: {
-      label?: string;
-      url?: string;
-    }[];
-    buttons: CTA[];
-  };
+  navLinks?: {
+    label?: string;
+    url?: string;
+  }[];
+  navButtons?: CTA[];
 }
 
 export default function Header({
@@ -29,18 +36,16 @@ export default function Header({
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1527/67120bcd-936a-4ea5-a760-02ed5c4a3d04",
     alt: "Logo",
   },
-  navigation = {
-    links: [
-      { label: "Home", url: "/" },
-      { label: "About us", url: "/" },
-      { label: "Princing", url: "/" },
-      { label: "Contact", url: "/" },
-    ],
-    buttons: [
-      { id: "change-me-1", href: "/", text: "Change me", outline: false },
-      { id: "change-me-2", href: "/", text: "Change me", outline: true },
-    ],
-  },
+  navLinks = [
+    { label: "Home", url: "/" },
+    { label: "About us", url: "/" },
+    { label: "Princing", url: "/" },
+    { label: "Contact", url: "/" },
+  ],
+  navButtons = [
+    { href: "/", text: "Change me", outline: false },
+    { href: "/", text: "Change me", outline: true },
+  ],
 }: Nav) {
   return (
     <nav class="drawer drawer-end">
