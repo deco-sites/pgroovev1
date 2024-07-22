@@ -1,5 +1,5 @@
-import { useSection } from "deco/hooks/useSection.ts";
-import type { AppContext } from "../apps/site.ts";
+
+import { ImageWidget } from 'apps/admin/widgets.ts';
 
 export interface CTA {
   id?: string;
@@ -19,18 +19,6 @@ export interface Props {
   description?: string;
   cta?: CTA;
   questions?: Question[];
-}
-
-export async function action(
-  props: Props,
-  req: Request,
-  ctx: AppContext
-): Promise<Props> {
-  return props;
-}
-
-export function loader(props: Props) {
-  return props;
 }
 
 export default function BlogPosts({
@@ -54,42 +42,29 @@ export default function BlogPosts({
       answer:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut vestibulum ligula. Nam et tellus sit amet magna convallis interdum. Integer fermentum ligula nec velit hendrerit, quis feugiat odio feugiat. Ut vel nisi auctor, rhoncus felis vitae, tempor metus. Fusce ut lectus et ex consectetur ullamcorper. Nulla facilisi. Proin ullamcorper, odio a consectetur posuere, mauris felis rutrum lectus, et convallis est risus vitae nisi. Suspendisse potenti. Donec ultricies consectetur lorem, eget tempor nisi cursus in. Viv",
     },
+    {
+      title: "What kind of events does Primordial Groove host?",
+      answer:
+        "We host a variety of events at Gratitude Lounge, including open mic nights, workshops, networking events, and more. Each event is designed to help artists connect, collaborate, and grow.",
+    },
+    {
+      title: "What facilities and equipment are available at Gratitude Lounge?",
+      answer:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut vestibulum ligula. Nam et tellus sit amet magna convallis interdum. Integer fermentum ligula nec velit hendrerit, quis feugiat odio feugiat. Ut vel nisi auctor, rhoncus felis vitae, tempor metus. Fusce ut lectus et ex consectetur ullamcorper. Nulla facilisi. Proin ullamcorper, odio a consectetur posuere, mauris felis rutrum lectus, et convallis est risus vitae nisi. Suspendisse potenti. Donec ultricies consectetur lorem, eget tempor nisi cursus in. Viv",
+    },
   ],
 }: Props) {
-  const generateSectionUrl = (
-    props: Props,
-    otherProps: { href?: string } = {}
-  ) => {
-    const sectionProps = {
-      ...otherProps,
-      props,
-    };
-    return useSection(sectionProps);
-  };
-
   return (
     <section>
       <div class="container mx-auto py-12">
         <h2 class="text-3xl font-bold mb-4">{title}</h2>
         <p class="mb-8">{description}</p>
-        <a
-          href={cta.href}
-          class={`btn btn-primary ${cta.outline ? "btn-outline" : ""}`}
-          hx-get={generateSectionUrl({ cta })}
-          hx-target="closest section"
-          hx-swap="innerHTML"
-        >
+        <a href={cta.href} class={`btn btn-primary ${cta.outline ? "btn-outline" : ""}`}>
           {cta.text}
         </a>
         <div class="mt-12">
           {questions.map((question, index) => (
-            <details
-              key={index}
-              class="mb-4 bg-base-200 rounded-box"
-              hx-get={generateSectionUrl({ questions })}
-              hx-target="closest details"
-              hx-swap="innerHTML"
-            >
+            <details key={index} class="mb-4 bg-base-200 rounded-box">
               <summary class="font-bold cursor-pointer">{question.title}</summary>
               <div class="p-4">{question.answer}</div>
             </details>
@@ -97,3 +72,5 @@ export default function BlogPosts({
         </div>
       </div>
     </section>
+  );
+}
