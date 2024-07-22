@@ -1,4 +1,3 @@
-
 import Image from "apps/website/components/Image.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
@@ -113,11 +112,19 @@ export default function Footer({
   },
 }: Props) {
   return (
-    <div class="lg:container mx-auto md:max-w-6xl px-4 pt-16 text-sm">
-      <div class="flex flex-col gap-20">
-        <div class="flex flex-col gap-6 justify-between lg:flex-row">
+    <div className="lg:container mx-auto md:max-w-6xl px-4 pt-16 text-sm">
+      <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-6 justify-between lg:flex-row">
           <div>
             <Image
               src={logo.src || ""}
               width={100}
-              height={28
+              height={28}
+              alt={logo.alt || "Logo"}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
