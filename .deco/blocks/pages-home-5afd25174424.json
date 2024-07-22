@@ -49,7 +49,7 @@
     },
     {
       "__resolveType": "site/sections/Hero.tsx",
-      "title": "<h1>Primordial Groove</h1>\n<p></p>\n<p><span style=\"font-size: 37pt\">Where Art Meets Community</span></p>\n<p></p>\n",
+      "title": "<h1>Primordial Groove</h1><p></p><p><span style=\"font-size: 37pt\">Where Art Meets Community</span></p><p></p>",
       "cta": [
         {
           "text": "Collaborate Now",
