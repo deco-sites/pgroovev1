@@ -125,12 +125,8 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
   },
-  "/.deco/blocks/deco-brand-assistant.json": {
-    "blockType": "apps",
-    "__resolveType": "site/apps/deco/brand-assistant.ts"
-  },
-  "/.deco/blocks/deco-weather.json": {
-    "blockType": "apps",
-    "__resolveType": "site/apps/deco/weather.ts"
+  "/.deco/blocks/collections%2Fblog%2Fposts%2F1d20e419e13a.json": {
+    "blockType": "loaders",
+    "__resolveType": "blog/loaders/Blogpost.ts"
   }
 }

@@ -456,18 +456,13 @@ const ButtonColorsPreview = () => {
   const renderButtonRow = (type: string) => (
     <div className="flex flex-row gap-2">
       {buttonColorsClasses.map(({ class: colorClass, label }) => (
-        <Button
-          text={label}
-          onClick={() => {}}
-          variant={colorClass.split("-")[1] as
-            | "primary"
-            | "secondary"
-            | "accent"
-            | "outline"
-            | "ghost"
-            | "link"}
-          size="xs"
-        />
+        <button
+          className={`btn btn-xs md:btn-sm capitalize ${colorClass} ${type} ${
+            type === "btn-ghost" ? "text-[initial]" : ""
+          }`}
+        >
+          {label}
+        </button>
       ))}
     </div>
   );

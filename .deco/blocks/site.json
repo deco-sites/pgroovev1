@@ -29,6 +29,15 @@
   "__resolveType": "site/apps/site.ts",
   "firstByteThresholdMS": false,
   "theme": {
-    "__resolveType": "Sunset Glow"
+    "__resolveType": "Vanilla"
+  },
+  "abTesting": {
+    "replaces": [],
+    "includeScriptsToHead": {
+      "includes": []
+    }
+  },
+  "flavor": {
+    "framework": "fresh"
   }
 }
