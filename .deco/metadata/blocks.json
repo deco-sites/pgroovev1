@@ -59,21 +59,9 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Theme/Theme.tsx"
   },
-  "/.deco/blocks/blog.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/blog.ts"
-  },
-  "/.deco/blocks/decohub.json": {
-    "blockType": "apps",
-    "__resolveType": "site/apps/decohub.ts"
-  },
   "/.deco/blocks/hero.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Hero.tsx"
-  },
-  "/.deco/blocks/htmx.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/htmx.ts"
   },
   "/.deco/blocks/pages-home-5afd25174424.json": {
     "name": "Home",
@@ -116,5 +104,13 @@
   "/.deco/blocks/deco-workflows.json": {
     "blockType": "apps",
     "__resolveType": "site/apps/deco/workflows.ts"
+  },
+  "/.deco/blocks/deco-htmx.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/htmx.ts"
+  },
+  "/.deco/blocks/deco-blog.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/blog.ts"
   }
 }
