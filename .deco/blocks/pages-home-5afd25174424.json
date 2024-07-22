@@ -70,18 +70,27 @@
       ]
     },
     {
-      "__resolveType": "site/sections/ImageWithParagraph.tsx"
+      "__resolveType": "site/sections/ImageWithParagraph.tsx",
+      "description": "Turn Your Artistic Vision into Reality. Perform with state-of-the-art sound and lighting systems that bring your artistic vision to life.",
+      "title": "Vision"
     },
     {
       "__resolveType": "site/sections/ImageWithParagraph.tsx",
+      "title": "Opportunity",
+      "description": "Endless Opportunities to Grow and Shine. Work alongside other talented individuals and organizations to grow and experiment with your music.",
       "placement": "right"
     },
     {
-      "__resolveType": "site/sections/BlogPosts.tsx"
+      "__resolveType": "site/sections/ImageWithParagraph.tsx",
+      "placement": "left",
+      "title": "Community",
+      "description": "A Shared Space to Connect, Collaborate, and Grow. Engage with a diverse and inclusive group of artists and creatives. ",
+      "disableSpacing": {
+        "bottom": false
+      }
     },
     {
-      "__resolveType": "site/sections/Testimonials.tsx",
-      "arrows": true
+      "__resolveType": "site/sections/BlogPosts.tsx"
     },
     {
       "__resolveType": "site/sections/Faq.tsx"
