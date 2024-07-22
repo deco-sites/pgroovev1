@@ -30,38 +30,6 @@ export interface Nav {
   navButtons?: CTA[];
 }
 
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
-import Icon from "../components/ui/Icon.tsx";
-
-export interface CTA {
-  href: string;
-  text: string;
-  outline?: boolean;
-  /**
-   * @format color-input
-   * @description The color of the button text.
-   */
-  textColor?: string;
-  /**
-   * @format color-input
-   * @description The background color of the button.
-   */
-  bgColor?: string;
-}
-
-export interface Nav {
-  logo?: {
-    src?: ImageWidget;
-    alt?: string;
-  };
-  navLinks?: {
-    label?: string;
-    url?: string;
-  }[];
-  navButtons?: CTA[];
-}
-
 export interface Props {
   navigation: Nav;
 }
@@ -82,44 +50,60 @@ export default function Header({
       { label: "Contact", url: "/" },
     ],
     navButtons = [
-      { href: "/", text: "Change me", outline: false },
-      { href: "/", text: "Change me", outline: true },
+      {
+        href: "/",
+        text: "Change me",
+        outline: false,
+        bgColor: "#000",
+        textColor: "#fff",
+      },
+      {
+        href: "/",
+        text: "Change me",
+        outline: true,
+        bgColor: "#fff",
+        textColor: "#000",
+      },
     ],
   } = navigation;
 
   return (
-    <nav class="drawer drawer-end">
-      <input id="mobile-drawer-nav" type="checkbox" class="drawer-toggle" />
+    <nav className="drawer drawer-end">
+      <input id="mobile-drawer-nav" type="checkbox" className="drawer-toggle" />
 
       {/* main content */}
-      <div class="drawer-content container lg:px-0 px-4 flex gap-8 items-center justify-between py-4">
+      <div className="drawer-content container lg:px-0 px-4 flex gap-8 items-center justify-between py-4">
         <a href="/">
           <Image src={logo.src || ""} width={100} height={28} alt={logo.alt} />
         </a>
 
-        <div class="hidden items-center justify-between lg:flex w-full">
-          <ul class="flex">
+        <div className="hidden items-center justify-between lg:flex w-full">
+          <ul className="flex">
             {navLinks.map((link) => (
               <li key={link.url}>
                 <a
                   href={link.url}
                   aria-label={link.label}
-                  class="link no-underline hover:underline p-4"
+                  className="link no-underline hover:underline p-4"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <ul class="flex gap-3">
+          <ul className="flex gap-3">
             {navButtons.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                target={item.href.includes("http") ? "_blank" : "_self"}
-                class={`font-normal btn btn-primary ${
+                target={item.href.startsWith("http") ? "_blank" : "_self"}
+                className={`font-normal btn btn-primary ${
                   item.outline && "btn-outline"
                 }`}
+                style={{
+                  backgroundColor: item.bgColor,
+                  color: item.textColor,
+                }}
               >
                 {item.text}
               </a>
@@ -129,23 +113,23 @@ export default function Header({
 
         <label
           htmlFor="mobile-drawer-nav"
-          class="flex lg:hidden btn btn-ghost drawer-button"
+          className="flex lg:hidden btn btn-ghost drawer-button"
         >
           <Icon id="Bars3" size={24} strokeWidth={0.1} />
         </label>
       </div>
 
       {/* sidebar */}
-      <aside class="drawer-side z-50">
+      <aside className="drawer-side z-50">
         {/* Close when clicking on overlay */}
         <label
           htmlFor="mobile-drawer-nav"
           aria-label="close sidebar"
-          class="drawer-overlay"
+          className="drawer-overlay"
         />
 
-        <div class="flex flex-col gap-8 min-h-full w-80 bg-base-100 text-base-content">
-          <a class="p-4" href="/">
+        <div className="flex flex-col gap-8 min-h-full w-80 bg-base-100 text-base-content">
+          <a className="p-4" href="/">
             <Image
               src={logo.src || ""}
               width={100}
@@ -154,7 +138,7 @@ export default function Header({
             />
           </a>
 
-          <ul class="menu">
+          <ul className="menu">
             {navLinks.map((link) => (
               <li key={link.url}>
                 <a href={link.url} aria-label={link.label}>
@@ -164,15 +148,19 @@ export default function Header({
             ))}
           </ul>
 
-          <ul class="p-4 flex items-center gap-3">
+          <ul className="p-4 flex items-center gap-3">
             {navButtons.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                target={item.href.includes("http") ? "_blank" : "_self"}
-                class={`font-normal btn btn-primary ${
+                target={item.href.startsWith("http") ? "_blank" : "_self"}
+                className={`font-normal btn btn-primary ${
                   item.outline && "btn-outline"
                 }`}
+                style={{
+                  backgroundColor: item.bgColor,
+                  color: item.textColor,
+                }}
               >
                 {item.text}
               </a>
